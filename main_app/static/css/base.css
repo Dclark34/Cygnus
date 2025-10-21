@@ -1,0 +1,90 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Segoe UI', 'Roboto';
+} 
+
+/* THIS IS WHAT WILL STRETCH NAV ACROSS SCREEN */
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+:root{
+    font-size: 70%;
+}
+
+
+header {
+    width: 100%;
+    background-color: #964c1d;
+    border-bottom: rgb(222, 212, 200);
+}
+
+nav {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+nav a:hover {
+    color: wheat;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    flex-wrap: wrap;
+}
+
+nav li {
+    padding: 10px 20px;
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+.about-content {
+    font-size: 1.8rem;
+}
+
+.abt-title {
+    margin: 16px;
+}
+
+.abt-content {
+    margin: 32px;
+}
+
