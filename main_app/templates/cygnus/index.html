@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %}
+{% block content %}
+<div class="sight-title">
+<h1>Your Sightings</h1>
+<hr />
+</div>
+
+<section class="card-container">
+    {% for sighting in sightings %}
+<a >
+<div class="index-card">
+    <div class="sight-details">
+<h1>{{ sighting.date }}</h1>
+<h2> {{ sighting.location }}</h2>
+</div>
+<div class="description">
+<p>{{ sighting.notes }}</p>
+</div>
+</div>
+</a>
+{% endfor %}
+</section>
+{% endblock %}

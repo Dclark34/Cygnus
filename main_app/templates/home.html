@@ -1,10 +1,26 @@
-{% extends 'base.html' %} {% block head %}
-<!-- Css link goes here -->
- {% endblock %} {% block content %}
+
+{% extends 'base.html' %} 
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+ {% endblock %} 
+ {% block content %}
+
+ <div class = 'landing'>
  <section class="logo-container">
     <h3>TODO: Insert an image or logo here.</h3>
     <h1>CYGNUS</h1>
     <h2>The Bird-Watchers Digital Logbook!</h2>
  </section>
-
+{% if not user.is_authenticated %}
+ <section class="login">
+  <form action="{% url 'home' %}" method="post" class="login">
+    <h1>Login</h1>
+    {% csrf_token %} {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <button type="submit" class="btn submit">Login</button>
+  </form>
+</section>
+{% endif %}
+</div>
  {% endblock %}
