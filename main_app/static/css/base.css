@@ -103,3 +103,8 @@ h2 {
 #logout-form button:hover {
   color: rgb(222, 212, 200);
 }
+
+.form-container {
+    display: flex;
+    
+}

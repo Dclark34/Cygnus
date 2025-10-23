@@ -15,7 +15,7 @@ class Sighting(models.Model):
         return self.location #had a type error here where the str wouldnt convert the date. 
     
     def get_absolute_url(self):
-        return reverse('sighting-index', kwargs={'sighting_id': self.id})
+        return reverse('sight-detail', kwargs={'sighting_id': self.id})
 
 
 #Bird Model

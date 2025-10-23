@@ -10,6 +10,7 @@ h1, h2, h3 {
 .card-container {
     max-width: 800px;
     margin-left: 20%;
+    margin-bottom: 20px;
 }
 
 .index-card{
@@ -19,6 +20,7 @@ h1, h2, h3 {
     margin: 10px;
     border-radius: 3px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .description {
@@ -26,4 +28,49 @@ h1, h2, h3 {
     align-items: end;
     margin: 0 100px 0 10px;
     font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover .index-card {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.btn-warn {
+    display: inline-block;
+    font-size: 20px;
+    border: 1px solid black;
+    margin-left: 22%;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-warn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-danger {
+    display: inline-block;
+    font-size: 20px;
+    border: 1px solid rgb(169, 4, 4);
+    margin-left: 10px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: rgb(230, 0, 0);
+    color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-danger:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }

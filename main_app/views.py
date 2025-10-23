@@ -3,6 +3,7 @@ from django.http import HttpResponse
 #models import
 from .models import Sighting, Bird
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from .forms import SightingForm
 
 #!auth stuff below
 from django.contrib.auth.views import LoginView
@@ -30,16 +31,29 @@ def sightings_index(request):
 #sighting detail?
 def sighting_detail(request, sighting_id):
     sighting = Sighting.objects.get(id=sighting_id)
-    return render(request, 'cygnus/sight-detail.html', {'sighting': sighting})#!this should show index of birds?
+    return render(request, 'cygnus/sightdetails.html', {'sighting': sighting})#!this should show index of birds?
 
 #sighting create
-class SightingCreate(CreateView):
+class SightingCreate(LoginRequiredMixin, CreateView):
     model = Sighting
-    fields = ['location', 'date', 'notes']
+    form_class = SightingForm
     template_name = 'cygnus/sighting_form.html'
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+    
+#sighting update
+class SightingUpdate(LoginRequiredMixin, UpdateView):
+    model = Sighting
+    fields = ['location', 'notes', 'date']
+    template_name = 'cygnus/sighting_form.html'
+
+
+#sighting delete
+class SightingDelete(LoginRequiredMixin, DeleteView):
+    model = Sighting
+    template_name = 'cygnus/sight_confirm_delete.html'
+    success_url = '/sightings/'
 
 
 #sign up function

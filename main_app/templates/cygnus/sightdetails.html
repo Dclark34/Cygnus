@@ -1,20 +1,20 @@
-{% extends 'base.html' %}
+ {% extends 'base.html' %}
 {% block head %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 {% endblock %}
 {% block content %}
 <div class="sight-title">
-<h1>Your Sightings</h1>
+<h1>Birds for {{ sighting.date }}</h1>
 <hr />
 </div>
 
+
 <section class="card-container">
-    {% for sighting in sightings %}
-<a href="{% url 'sight-detail' sighting.id %}">
+<a href="">
 <div class="index-card">
-    <div class="sight-details">
-<h1>{{ sighting.date }}</h1>
+    <div class="">
+<h1>Bird 1</h1>
 <h2> {{ sighting.location }}</h2>
 </div>
 <div class="description">
@@ -22,6 +22,10 @@
 </div>
 </div>
 </a>
-{% endfor %}
 </section>
+
+<div class="sighting-actions">
+    <a href="{% url 'sighting-update' sighting.id %}" class="btn-warn">Edit</a>
+    <a href="{% url 'sighting-delete' sighting.id %}" class="btn-danger">DELETE</a>
+</div>
 {% endblock %}
