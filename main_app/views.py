@@ -56,6 +56,18 @@ class SightingDelete(LoginRequiredMixin, DeleteView):
     success_url = '/sightings/'
 
 
+#bird create
+class BirdCreate(LoginRequiredMixin, CreateView):
+    model = Bird
+    fields = '__all__'
+
+#bird details
+
+#bird delete (remove?)
+
+#bird update
+
+
 #sign up function
 def signup(request):
     error_message = ''

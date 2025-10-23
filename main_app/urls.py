@@ -10,5 +10,6 @@ urlpatterns = [
     path('sightings/<int:sighting_id>/', views.sighting_detail, name='sight-detail'),
     path('sightings/<int:pk>/update/', views.SightingUpdate.as_view(), name='sighting-update'),
     path('sightings/<int:pk>/delete/', views.SightingDelete.as_view(), name='sighting-delete'),
+    path('birds/create', views.BirdCreate.as_view(), name='bird-create'),
     path('accounts/signup/', views.signup, name='signup'),
 ] 

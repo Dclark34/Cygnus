@@ -26,4 +26,10 @@ class Bird(models.Model):
     quantity = models.IntegerField
     sighted = models.ForeignKey(Sighting, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.common_name
+    
+    def get_absolute_url(self):
+        return reverse('bird-detail', kwargs={'pk':self.id})
+
     
