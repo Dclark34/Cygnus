@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/bird-detail.css' %}" />
+{% endblock %} 
+{% block content %}
+
+<div class="card">
+  <div class="bird-img-container">
+  </div>
+  <div class="card-content">
+    <h1>{{ bird.common_name }}</h1>
+    <p>Family: {{ bird.family }}</p>
+    <p>Seen: {{ bird.quantity }}</p>
+  </div>
+</div>
+<div class="brd-detail-actions">
+<a href="{% url 'bird-update' bird.id %}" class="btn warn">Edit</a>
+<a href="{% url 'bird-delete' bird.id %}" class="btn danger">Delete</a>
+</div>
+
+{% endblock %}
+

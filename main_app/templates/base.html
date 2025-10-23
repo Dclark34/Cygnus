@@ -18,7 +18,7 @@
                 {% if user.is_authenticated %}
                  <li><a href="{% url 'about' %}">About</a></li>
                  <li><a href="{% url 'index' %}">Your Sightings</a></li>
-                 <li><a href="{% url 'sighting-create' %}">Add Sighting</a></li>
+                 <li><a href="{% url 'bird-index' %}">All Birds</a></li>
                  <li>
                     <form id="logout-form" method="post" action="{% url 'logout' %}">
                     {% csrf_token %}

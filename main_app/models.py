@@ -22,8 +22,8 @@ class Sighting(models.Model):
 class Bird(models.Model):
     common_name = models.CharField(max_length=75)
     family = models.CharField(max_length=50)
-    common_region = models.CharField
-    quantity = models.IntegerField
+    common_region = models.CharField(max_length=75)
+    quantity = models.IntegerField()
     sighted = models.ForeignKey(Sighting, on_delete=models.CASCADE)
 
     def __str__(self):

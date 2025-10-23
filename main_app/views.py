@@ -3,6 +3,7 @@ from django.http import HttpResponse
 #models import
 from .models import Sighting, Bird
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView
 from .forms import SightingForm
 
 #!auth stuff below
@@ -60,13 +61,30 @@ class SightingDelete(LoginRequiredMixin, DeleteView):
 class BirdCreate(LoginRequiredMixin, CreateView):
     model = Bird
     fields = '__all__'
+    template_name = 'cygnus/bird_form.html'
 
 #bird details
+class BirdDetail(LoginRequiredMixin, DetailView):
+    model = Bird 
+    fields = '__all__'
+    template_name = 'cygnus/bird_details.html'
 
-#bird delete (remove?)
+#bird List
+class BirdList(LoginRequiredMixin, ListView):
+    model = Bird
+    template_name = 'cygnus/bird-index.html'
 
 #bird update
+class BirdUpdate(LoginRequiredMixin, UpdateView):
+    model = Bird
+    fields = '__all__'
+    template_name = 'cygnus/bird_form.html'
 
+#bird delete
+class BirdDelete(LoginRequiredMixin, DeleteView):
+    model = Bird
+    template_name = 'cygnus/confirm_bird_delete.html'
+    success_url = '/birds/'
 
 #sign up function
 def signup(request):

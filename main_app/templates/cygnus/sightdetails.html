@@ -14,11 +14,11 @@
 <a href="">
 <div class="index-card">
     <div class="">
-<h1>Bird 1</h1>
+<h1>{{ bird.common_name }}</h1>
 <h2> {{ sighting.location }}</h2>
 </div>
 <div class="description">
-<p>{{ sighting.notes }}</p>
+<p>{{ bird.quantity }}</p>
 </div>
 </div>
 </a>
@@ -26,6 +26,6 @@
 
 <div class="sighting-actions">
     <a href="{% url 'sighting-update' sighting.id %}" class="btn-warn">Edit</a>
-    <a href="{% url 'sighting-delete' sighting.id %}" class="btn-danger">DELETE</a>
+    <a href="{% url 'sighting-delete' sighting.id %}" class="btn-danger">DELETE SIGHTING</a>
 </div>
 {% endblock %}

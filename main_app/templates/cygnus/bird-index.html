@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %} 
+{% block content %}
+
+<section class="page-header">
+  <h1>All Birds</h1>
+</section>
+
+<section class="card-container">
+  {% for bird in bird_list %}
+    <div class="bird-card">
+      <div class="card-bg"></div>
+      <a href="{% url 'bird-detail' bird.id %}">
+        <div class="card-content">
+          <h2>{{ bird.common_name }}</h2>
+          <p>{{ bird.quantity }}</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+<li class="add-bird"><a href="{% url 'bird-create' %}">+ Add a Bird</a></li>
+
+{% endblock %}
