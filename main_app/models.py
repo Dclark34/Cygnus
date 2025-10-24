@@ -29,6 +29,7 @@ class Sighting(models.Model):
     notes = models.TextField(max_length= 250)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     birds = models.ManyToManyField(Bird, through='SightingBird')
+
     def __str__(self):
         return self.location #had a type error here where the str wouldnt convert the date. 
     

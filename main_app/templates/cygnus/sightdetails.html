@@ -27,13 +27,13 @@
 
 <section class="card-container">
     {% for bs in birds_seen %}
-    <a href="{%url 'bird-detail' bird.id%}">
+    <a href="{%url 'bird-detail' bs.bird.id%}">
         <div class="index-card">
             <div class="">
                 <h1>{{ bs.bird.common_name }}</h1>
                 <h2> Family: {{ bs.bird.family }} </h2>
                 <p> Region: {{bs.bird.common_region }}</p>
-                <p>Seen: {{ bs.quantity }}</p>
+                <p>Seen: {{ bs.bird.quantity }}</p>
             </div>
             <div class="description">
                 <p>{{ bird.quantity }}</p>
