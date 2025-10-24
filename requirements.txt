@@ -1,0 +1,7 @@
+certifi==2025.10.5
+distlib==0.4.0
+filelock==3.19.1
+packaging==25.0
+pipenv==2025.0.4
+platformdirs==4.4.0
+virtualenv==20.34.0
